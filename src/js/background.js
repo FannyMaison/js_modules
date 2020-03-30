@@ -22,7 +22,7 @@ export default class background {
 			this.$els = {//this fait ref à background
 				background:$('.js-background'),
 			};
-			this.url='https://source.unsplash.com/?nature,water';
+			this.url='https://source.unsplash.com/?{KEYWORD},{KEYWORD}';
 			//this.cat='638440';//catégorie
 			this.size='1920x1080'
 		}
@@ -53,7 +53,5 @@ export default class background {
 	addBackground(image) {
 		this.$els.background.css('background-image', `url(${image.src})`);
 		this.$els.background.addClass('is-ready');
-      	new Greeting();
-      	new Quote();
 	}
 }

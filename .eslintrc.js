@@ -26,7 +26,7 @@ module.exports = {
     "window": false
   },
 
-  "rules": {
+ /* "rules": {
     "accessor-pairs": "warn",
     "arrow-spacing": ["warn", {"before": true, "after": true}],
     "block-spacing": ["warn", "always"],
