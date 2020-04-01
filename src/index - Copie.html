@@ -11,7 +11,7 @@
 	<h3>Recherchez une activité par type</h3>
 	<p>["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"]</p>
 	<div class="form_container">
-		<form method="get" onsubmit="htmlUserChoice()">
+		<form method="get" onsubmit="executeUserChoice(inputString)">
 			<input type="text" id="search_text" placeholder="Rechercher une activité">
 			<input type="submit" value=" " name="">
 		</form>
@@ -28,15 +28,6 @@
 		  "link": ,
 		}
 	</div>
-	<script type="text/javascript">
-		function htmlUserChoice(){
-			var searchString =document.getElementById('search_text');
 
-			var p = new background();
-			p.executeUserChoice(searchString);
-
-			console.log(searchString);
-		}
-	</script>
 </body>
 </html>

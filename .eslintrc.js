@@ -24,7 +24,7 @@ module.exports = {
     "document": false,
     "navigator": false,
     "window": false
-  },
+  }
 
  /* "rules": {
     "accessor-pairs": "warn",
