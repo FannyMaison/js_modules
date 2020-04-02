@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 
-export default class background {
+export default class activity {
 	constructor () {
 		this.initEls();
 		this.initEvents();

@@ -11,22 +11,22 @@
 	<h3>Recherchez une activité par type</h3>
 	<p>["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"]</p>
 	<div class="form_container">
-		<form method="get" onsubmit="htmlUserChoice()">
-			<input type="text" id="search_text" placeholder="Rechercher une activité">
+		<form method="get" id="search_form" onsubmit="htmlUserChoice()" action="">
+			<input type="text" id="search_text" placeholder="Entrer une activité">
 			<input type="submit" value=" " name="">
 		</form>
 	</div>
 	<div class="container js-container">
-		<div class="activity js-activity"></div>
-		<div class="activity__type js-type"></div>
-		<div class="activity__participants js-participants"></div>
-		<div class="activity__link js-link"></div>
-		{
+		<p>Activité : <div class="activity js-activity"></div></p>
+		<p>Type : <div class="activity__type js-type"></div></p>
+		<p>Participants : <div class="activity__participants js-participants"></div></p>
+		<p>Lien : <div class="activity__link js-link"></div></p>
+		<!--{
 		  "activity": ,
 		  "type": ,
 		  "participants": ,
 		  "link": ,
-		}
+		}-->
 	</div>
 	<script type="text/javascript">
 		function htmlUserChoice(){
@@ -38,5 +38,8 @@
 			console.log(searchString);
 		}
 	</script>
+	<footer>
+		<p>Développé par Fanny Maison</p>
+	</footer>
 </body>
 </html>

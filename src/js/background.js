@@ -19,8 +19,8 @@ export default class background {
 
 
 	initEls(){
-
-			this.$els = {//this fait ref à background
+			//this fait ref à background
+			this.$els = {
 				background:$('.js-background'),
 			};
 			this.url='https://source.unsplash.com/featured/?' + userChoiceString;
