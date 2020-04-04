@@ -1,7 +1,5 @@
 import $ from 'jquery';
-import Greeting from './greeting';
-import Quote from './quote';
-let userChoiceString = 'relaxation';
+
 /*
 * Objectif : récupérer une image par rapport à des mots clés que l'utlisateur rentre à partir d'une API et l'afficher
 *
@@ -12,19 +10,16 @@ let userChoiceString = 'relaxation';
 * */
 
 export default class background {
-	constructor () {
-		this.initEls();
-		this.initEvents();
+	constructor (_searchType) {			//permet de donner l'url en fonction de la requête de l'utilisateur
+		this.executeUserChoice(_searchType);
 	}
 
 
 	initEls(){
-			//this fait ref à background
 			this.$els = {
 				background:$('.js-background'),
 			};
-			this.url='https://source.unsplash.com/featured/?' + userChoiceString;
-			//this.cat='638440';//catégorie
+			this.url='https://source.unsplash.com/featured/?' + this.searchType;
 			this.size='1920x1080'
 		}
 
@@ -56,9 +51,10 @@ export default class background {
 		this.$els.background.css('background-image', `url(${image.src})`);
 		this.$els.background.addClass('is-ready');
 	}
-
+	//permet d'executer la requête de l'utilisateur entrée dans le input
 	executeUserChoice(inputString) {
-		userChoiceString=inputString;
-
+		this.searchType=inputString;
+		this.initEls();
+		this.initEvents();
 	}
 }

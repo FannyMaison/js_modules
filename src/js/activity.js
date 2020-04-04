@@ -2,12 +2,11 @@ import $ from 'jquery';
 
 
 export default class activity {
-	constructor () {
-		this.initEls();
-		this.initEvents();
+	constructor (_searchType) {
+		this.executeUserChoice(_searchType);
 	}
 
-	initEls() {
+	initEls() { //défini les "variables"
 		this.$els = {
 			activity: $('.js-activity'),
 			type: $('.js-activity-type'),
@@ -25,7 +24,7 @@ export default class activity {
 
 	getActivity() {
 		const api = {
-			endpoint: 'http://www.boredapi.com/api/activity?type=:type',
+			endpoint: 'http://www.boredapi.com/api/activity?type=' + this.searchType,
 			params: {
 				'per_page': 1,
 			},
@@ -34,19 +33,25 @@ export default class activity {
 		$.ajaxSetup({cache: false});
 		$.getJSON(api.endpoint, api.params)
 		.then((response) =>{
-			console.log(response);
-			this.renderActivity(response[0].content.rendered, response[0].title.rendered);
+			//console.log(response);
+			this.renderActivity(response.activity, response.type, response.participants, response.link);
 		})
 		.catch((e) => {
 			console.log('error with the activity :', e);
 		});
 	}
-
+	//défini où les response de l'API vont s'injecter 
 	renderActivity(activity, type, participants, link) {
 		this.$els.activity.text(activity);
 		this.$els.type.text(type);
 		this.$els.participants.text(participants);
 		this.$els.link.text(link);
 		this.$els.container.addClass('is-ready');
+	}
+
+	executeUserChoice(inputString) {
+		this.searchType=inputString;
+		this.initEls();
+		this.initEvents();
 	}
 }

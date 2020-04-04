@@ -2,44 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Api modules</title>
+    <title>Types API</title>
 </head>
 <body>
 
 	<div class="background js-background">
 	</div>
-	<h3>Recherchez une activité par type</h3>
+	<h3>Research an activity with the types below</h3>
 	<p>["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"]</p>
 	<div class="form_container">
-		<form method="get" id="search_form" onsubmit="htmlUserChoice()" action="">
-			<input type="text" id="search_text" placeholder="Entrer une activité">
+		<form method="get" id="search_form" action="">
+			<input type="text" id="search_text" placeholder="Enter an activity's type">
 			<input type="submit" value=" " name="">
 		</form>
 	</div>
 	<div class="container js-container">
-		<p>Activité : <div class="activity js-activity"></div></p>
-		<p>Type : <div class="activity__type js-type"></div></p>
-		<p>Participants : <div class="activity__participants js-participants"></div></p>
-		<p>Lien : <div class="activity__link js-link"></div></p>
-		<!--{
-		  "activity": ,
-		  "type": ,
-		  "participants": ,
-		  "link": ,
-		}-->
+		<p>Activity : <span class="activity js-activity"></span></p>
+		<p>Type : <span class="activity js-activity-type"></span></p>
+		<p>Participants : <span class="activity js-activity-participants"></span></p>
+		<p>Link : <span class="activity js-activity-link"></span></p>
 	</div>
-	<script type="text/javascript">
-		function htmlUserChoice(){
-			var searchString =document.getElementById('search_text');
-
-			var p = new background();
-			p.executeUserChoice(searchString);
-
-			console.log(searchString);
-		}
-	</script>
 	<footer>
-		<p>Développé par Fanny Maison</p>
+		<p>Developed by Fanny Maison - 2020</p>
 	</footer>
 </body>
 </html>

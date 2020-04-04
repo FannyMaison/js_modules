@@ -12,23 +12,22 @@ class App {
 
     initApp () {
       // Start application
-      new Background();
-      new Activity();
+        this.pBackground = new Background("");	//mémorise le pointeur qui fait appel à la fonction Background
+      this.pActivity = new Activity("");
     }
 }
 
-new App();
+let pApp = new App();
 
-
+//fonction qui permet de récupérer ce que l'utilisateur a récupéré dans l'input pour le transmettre aux modules background et activity
 let postForm = () => {
     $("#search_form").submit(function(){
         let type = $('#search_text').val();
         $('#search_text').val('');
-        //requestType(type);
-        Activity(type);
-        Background(type);
+        pApp.pBackground.executeUserChoice(type);
+		pApp.pActivity.executeUserChoice(type);
         return false;
     });
 }
-//requestType(type);
+
 postForm();
